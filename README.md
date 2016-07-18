@@ -21,9 +21,15 @@ export PATH="$HOME/.docker-bin:$PATH"
 
 Run commands as you usually would. Each of the commands mentioned below will download and run up a docker container (prefixed by `dockerbin_`). The docker container will then be used to run the appropriate commands.
 
+**For certain commands that are installed with another command (like `bower`), you must still install that command as you would normally e.g. `npm install -g bower`.**
+
+Data persistance is stored at `$HOME/.docker-bin/.volumes`.
+
 **Available Commands**
 
 * npm
+  * bower
+* composer
 
 
 ## Contributing
