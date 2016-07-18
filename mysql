@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CONTAINER="mysql"
+CONTAINER_TAG="latest"
+CONTAINER_NAME="mysql"
+CONTAINER_STRING="$CONTAINER:$CONTAINER_TAG"
+
+docker run --rm -it \
+  --name="dockerbin_$CONTAINER_NAME" \
+  $CONTAINER_STRING mysql "$@"

@@ -31,6 +31,7 @@ Data persistance is stored at `$HOME/.docker-bin/.volumes`.
   * bower
   * gulp
 * composer
+* mysql
 
 
 ## Contributing
