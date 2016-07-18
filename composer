@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CONTAINER="composer/composer"
+CONTAINER_TAG="latest"
+CONTAINER_NAME="composer"
+CONTAINER_STRING="$CONTAINER:$CONTAINER_TAG"
+
+# Not using init-container.sh since composer/composer container uses a different entrypoint
+# ./init-container.sh $CONTAINER $CONTAINER_TAG $CONTAINER_NAME --help
+docker run --rm -it --name="dockerbin_$CONTAINER_NAME" $CONTAINER_STRING "$@"
