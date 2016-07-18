@@ -31,3 +31,4 @@ Pull requests may be submitted. This project currently needs the following:
 
 1. More common commands
 2. Address need for sharing volumes based on `pwd` or specified parameter
+3. Address problem when container has a custom entrypoint that neglects bash support
