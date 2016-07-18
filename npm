@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CONTAINER="node"
+CONTAINER_TAG="4.4.7"
+CONTAINER_NAME="node"
+./init-container.sh $CONTAINER $CONTAINER_TAG $CONTAINER_NAME
+docker exec -it "dockerbin_$CONTAINER_NAME" npm "$@"
