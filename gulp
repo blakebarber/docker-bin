@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CONTAINER="node"
+CONTAINER_TAG="4.4.7"
+CONTAINER_NAME="node"
+CONTAINER_STRING="$CONTAINER:$CONTAINER_TAG"
+# ./init-container.sh $CONTAINER $CONTAINER_TAG $CONTAINER_NAME
+# docker exec -it "dockerbin_$CONTAINER_NAME" npm "$@"
+docker run --rm -it \
+  --name="dockerbin_$CONTAINER_NAME" \
+  -v "$HOME/.docker-bin/.volumes/$CONTAINER_NAME/node_modules/:/install/node_modules/" \
+  -e "PATH=/install/node_modules/bin:$PATH" \
+  -e "NPM_CONFIG_PREFIX=/install/node_modules/" \
+  -e "NODE_PATH=/install/node_modules/" \
+  $CONTAINER_STRING gulp --allow-root "$@"
